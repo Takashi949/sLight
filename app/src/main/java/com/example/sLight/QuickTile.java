@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.sLight;
 
 import android.os.Build;
 import android.service.quicksettings.Tile;
