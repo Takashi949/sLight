@@ -18,10 +18,6 @@ public class QuickTile extends TileService {
     public void onClick() {
         super.onClick();
         Tile tile = getQsTile();
-        /*if(tile.getState() == Tile.STATE_ACTIVE) Toast.makeText(getBaseContext(), "ACTIVE", Toast.LENGTH_SHORT).show();
-        else Toast.makeText(getBaseContext(), "NOACTIVE", Toast.LENGTH_SHORT).show();*/
-
-        //tile.updateTile();
 
         new Thread(new Runnable() {
             @Override
@@ -37,6 +33,7 @@ public class QuickTile extends TileService {
                 } catch (IOException e) {
                     e.printStackTrace();
                     Log.e("MYAPP", e.getMessage());
+                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         }).start();
