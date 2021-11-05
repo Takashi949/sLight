@@ -27,7 +27,7 @@ public class QuickTile extends TileService {
             @Override
             public void run() {
                 try {
-                    Socket socket = new Socket("192.168.11.101", 10545);
+                    Socket socket = new Socket("192.168.11.101", 50545);
 
                     PrintWriter bufferedWriter = new PrintWriter(socket.getOutputStream(), true);
                     bufferedWriter.print("lightonoff");
