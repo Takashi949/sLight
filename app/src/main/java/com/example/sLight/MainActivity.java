@@ -61,24 +61,29 @@ public class MainActivity extends AppCompatActivity{
                 }
             }
             else if(view.getId() == R.id.send){
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            PrintWriter bufferedWriter = new PrintWriter(socket.getOutputStream(), true);
-                            bufferedWriter.print(R.string.light_cmd);
-                            bufferedWriter.flush();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
-                                }
-                            });
+                if(socket != null) {
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                PrintWriter bufferedWriter = new PrintWriter(socket.getOutputStream(), true);
+                                bufferedWriter.print(R.string.light_cmd);
+                                bufferedWriter.flush();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                                    }
+                                });
+                            }
                         }
-                    }
-                }).start();
+                    }).start();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "connect first", Toast.LENGTH_LONG).show();
+                }
             }
         }
     };
