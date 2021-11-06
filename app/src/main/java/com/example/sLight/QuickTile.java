@@ -26,7 +26,7 @@ public class QuickTile extends TileService {
                     Socket socket = new Socket("192.168.11.101", 50545);
 
                     PrintWriter bufferedWriter = new PrintWriter(socket.getOutputStream(), true);
-                    bufferedWriter.print(R.string.light_cmd);
+                    bufferedWriter.print(getString(R.string.light_cmd));
                     bufferedWriter.flush();
 
                     socket.close();
