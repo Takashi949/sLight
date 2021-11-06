@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity{
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
                                 }
                             });
                         }
@@ -66,14 +66,14 @@ public class MainActivity extends AppCompatActivity{
                     public void run() {
                         try {
                             PrintWriter bufferedWriter = new PrintWriter(socket.getOutputStream(), true);
-                            bufferedWriter.print("lightonoff");
+                            bufferedWriter.print(R.string.light_cmd);
                             bufferedWriter.flush();
                         } catch (IOException e) {
                             e.printStackTrace();
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
                                 }
                             });
                         }
