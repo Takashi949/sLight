@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">smart light</string>
     <string name="light_cmd">lightonoff\n</string>
+    <string name="launch_name">sLight</string>
 </resources>
