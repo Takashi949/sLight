@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">smart light</string>
-    <string name="light_cmd">lightonoff\n</string>
+    <string name="light_cmd">lightonoff</string>
     <string name="launch_name">sLight</string>
+    <string name="raspip">192.168.11.101</string>
+    <integer name="raspport">50545</integer>
 </resources>

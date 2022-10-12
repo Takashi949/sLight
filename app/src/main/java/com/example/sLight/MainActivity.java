@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity{
                     @Override
                     public void run() {
                         try {
-                            if (socket == null) socket = new Socket("192.168.11.101", 50545);
+                            if (socket == null) socket = new Socket(getString(R.string.raspip), getResources().getInteger(R.integer.raspport));
                         } catch (IOException e) {
                             e.printStackTrace();
                             Log.e("MYAPP", e.getMessage());

@@ -23,7 +23,7 @@ public class QuickTile extends TileService {
             @Override
             public void run() {
                 try {
-                    Socket socket = new Socket("192.168.11.101", 50545);
+                    Socket socket = new Socket(getString(R.string.raspip), getResources().getInteger(R.integer.raspport));
 
                     PrintWriter bufferedWriter = new PrintWriter(socket.getOutputStream(), true);
                     bufferedWriter.print(getString(R.string.light_cmd));
